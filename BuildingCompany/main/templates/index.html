@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company.company_name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>{{ company.company_name }}</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<style>
+    .services-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .service {
+        width: 30%; /* Устанавливаем ширину блока с учетом промежутков между элементами */
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service img {
+        width: 100%; /* Устанавливаем ширину изображения на 100% блока */
+        height: auto; /* Позволяет изображению сохранить пропорции */
+        margin-bottom: 10px; /* Отступ между изображением и текстом */
+    }
+
+    .service-info {
+        text-align: center;
+    }
+</style>
+
+<section id="about">
+    <div class="container">
+        <h2>О нас</h2>
+        <p>{{ company.description }}</p>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2>Наши услуги</h2>
+        <div class="services-list">
+            {% for service in services %}
+            <div class="service">
+                <img src="{{ service.image.url }}" alt="{{ service.name }}">
+                <div class="service-info">
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <h2>Контакты</h2>
+        <p>Как связаться с нами:</p>
+        <p>Телефон: {{ company.phone_number }}</p>
+        <p>Email: {{ company.email }}</p>
+        <p>Адрес: {{ company.address }}</p>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 {{ company.company_name }}. Все права защищены.</p>
+    </div>
+</footer>
+</body>
+</html>

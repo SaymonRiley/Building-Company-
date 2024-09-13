@@ -1,0 +1,115 @@
+/* Reset CSS */
+{
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+body {
+    font-family: 'S', sans-serif;
+    color: white;
+    font-size: 24px; /* Размер шрифта по вашему выбору */
+    background-image: url('../images/ukraineflag.jpg');
+    background-size: cover; /* Растягиваем изображение на всю площадь */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    background-position: center; /* Центрируем изображение по центру */
+}
+
+@keyframes changeBackground {
+    0% {
+        background-color: #0057b8; /* Начальный цвет фона */
+    }
+    50% {
+        background-color: #ffd700; /* Промежуточный цвет фона */
+    }
+    100% {
+        background-color: #0057b8; /* Конечный цвет фона (возвращаемся к начальному) */
+    }
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+header h1 {
+    font-size: 36px; /* Увеличение размера шрифта заголовка */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; /* Увеличение размера шрифта ссылок в навигации */
+}
+
+section {
+    padding: 50px 0;
+}
+
+section h2 {
+    font-size: 28px; /* Уменьшение размера шрифта подзаголовков */
+    text-align: left; /* Выравнивание подзаголовков по центру */
+}
+
+section p {
+    font-size: 16px; /* Размер шрифта для обычного текста */
+    line-height: 1.6; /* Межстрочное расстояние */
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px; /* Уменьшение размера шрифта в подвале */
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-info {
+    margin-bottom: 20px;
+}
+
+
+.service img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px; /* Добавляем небольшой отступ между изображением и текстом */
+}
+
+.service-info {
+    flex: 1; /* Расширяем блок с информацией о сервисе на всю доступную ширину */
+}
